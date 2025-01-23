@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2883C922-3404-46FE-AAFA-980AA2A23EFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8B239F07-48C4-446C-A864-7493D4C142B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{32424589-66D9-43BC-B6C1-9DCAA8A3476D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT-Identity", "BT-Identity\BT-Identity.csproj", "{B443F454-A353-4BE6-BA27-4FA1F4AC229A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT-User", "BT-User\BT-User.csproj", "{389FDBAE-FB07-443A-BC69-074823295804}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B443F454-A353-4BE6-BA27-4FA1F4AC229A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B443F454-A353-4BE6-BA27-4FA1F4AC229A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B443F454-A353-4BE6-BA27-4FA1F4AC229A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B443F454-A353-4BE6-BA27-4FA1F4AC229A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389FDBAE-FB07-443A-BC69-074823295804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389FDBAE-FB07-443A-BC69-074823295804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389FDBAE-FB07-443A-BC69-074823295804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389FDBAE-FB07-443A-BC69-074823295804}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B443F454-A353-4BE6-BA27-4FA1F4AC229A} = {2883C922-3404-46FE-AAFA-980AA2A23EFA}
+		{389FDBAE-FB07-443A-BC69-074823295804} = {8B239F07-48C4-446C-A864-7493D4C142B3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CAC272E-0CFC-4F4A-8378-0C155B955792}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0TlUedJleLRBuZkOew9GYDzdWYvqhen1d5lFccwgVLU=",
+  "Source": "BT-Identity",
+  "BasePath": "_content/BT-Identity",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

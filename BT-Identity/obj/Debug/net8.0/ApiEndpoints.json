@@ -1,0 +1,84 @@
+[
+  {
+    "ContainingType": "BT_Identity.Controllers.AuthorizeController",
+    "Method": "Index",
+    "RelativePath": "api/Authorize",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "client_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "client_secret",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "redirect_uri",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "response_type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "scope",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "code_challenge",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "code_challenge_method",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "response_mode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "nonce",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "state",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BT_Identity.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BT_Identity.WeatherForecast, BT-Identity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

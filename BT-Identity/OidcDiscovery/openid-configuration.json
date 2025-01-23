@@ -1,0 +1,17 @@
+{
+  "issuer": "https://localhost:7192",
+  "authorization_endpoint": "https://localhost:7192/api/authorize",
+  "token_endpoint": "https://localhost:7192/oauth/token",
+  "device_authorization_endpoint": "https://localhost:7192/oauth/device/code",
+  "userinfo_endpoint": "https://localhost:7192/userinfo",
+  "mfa_challenge_endpoint": "https://localhost:7192/mfa/challenge",
+  "jwks_uri": "https://localhost:7192/.well-known/jwks",
+  "registration_endpoint": "https://localhost:7192/oidc/register",
+  "revocation_endpoint": "https://localhost:7192/oauth/revoke",
+  "scopes_supported": [
+    "openid",
+    "profile",
+    "email",
+    "email_verified"
+  ]
+}

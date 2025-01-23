@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "BT_User.Controllers.UsersController",
+    "Method": "GetOidcSettings",
+    "RelativePath": "api/Users/GetOidcSettings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
