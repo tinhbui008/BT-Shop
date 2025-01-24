@@ -1,7 +1,11 @@
+﻿using BT_Identity;
+using BT_Identity.Data;
 using Duende.IdentityServer.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Logging;
@@ -19,34 +23,48 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<DBContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("IdentityConnection")));
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-.AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateIssuerSigningKey = true,
-        ValidateLifetime = true,
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<DBContext>()
+    .AddDefaultTokenProviders();
 
-        ValidIssuer = builder.Configuration["JWTAuthen:Issuer"],
-        ValidAudience = builder.Configuration["JWTAuthen:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWTAuthen:Key"]))
-    };
-    
-    options.Events = new JwtBearerEvents
-    {
-        OnAuthenticationFailed = context =>
-        {
-            if (context.Exception.GetType() == typeof(SecurityTokenInvalidAudienceException))
-            {
-                return context.Response.WriteJsonAsync(new {Data = "ahihi" });
-            }
-            return Task.CompletedTask;
-        }
-    };  
-});
+builder.Services.AddIdentityServer()
+    .AddDeveloperSigningCredential()
+    .AddAspNetIdentity<IdentityUser>()
+    .AddInMemoryClients(Config.GetClients())
+    .AddInMemoryApiResources(Config.GetApiResources())
+    .AddInMemoryIdentityResources(Config.GetIdentityResources());
+
+
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//.AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+//{
+//    options.TokenValidationParameters = new TokenValidationParameters
+//    {
+//        ValidateIssuer = true,
+//        ValidateAudience = true,
+//        ValidateIssuerSigningKey = true,
+//        ValidateLifetime = true,
+
+//        ValidIssuer = builder.Configuration["JWTAuthen:Issuer"],
+//        ValidAudience = builder.Configuration["JWTAuthen:Audience"],
+//        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWTAuthen:Key"]))
+//    };
+
+//    options.Events = new JwtBearerEvents
+//    {
+//        OnAuthenticationFailed = context =>
+//        {
+//            if (context.Exception.GetType() == typeof(SecurityTokenInvalidAudienceException))
+//            {
+//                return context.Response.WriteJsonAsync(new {Data = "ahihi" });
+//            }
+//            return Task.CompletedTask;
+//        }
+//    };  
+//});
 
 builder.Services.AddCors(options =>
 {

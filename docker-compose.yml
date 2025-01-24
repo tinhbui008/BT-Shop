@@ -1,0 +1,23 @@
+version: '3.4'
+services:
+  postgresql:
+    image: postgres:latest
+    container_name: postgresql-audit
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=poWTCWE83nByliBV462f
+    volumes:
+      - pg-data-audit:/var/lib/postgresql/data:rw
+    networks:
+      - backend
+    restart: always
+
+volumes:
+  pg-data-audit:
+  nuget-packages:
+networks:
+  backend:
+    driver: bridge
+    external: true
